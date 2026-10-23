@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login — VoiceGuard (AAROHAN × PEEK HUB)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#f3f4f0] text-slate-800 min-h-screen flex flex-col justify-center items-center p-6 font-sans">
+
+    <!-- ENLARGED LOGIN CONTAINER -->
+    <div class="w-full max-w-xl bg-white border border-slate-200/80 rounded-3xl shadow-md p-10 md:p-12">
+        <div class="flex items-center gap-4 mb-8 justify-center">
+            <div class="w-14 h-14 rounded-2xl bg-[#0f6d55]/20 border border-[#0f6d55]/40 flex items-center justify-center text-[#0f6d55] font-black text-2xl shadow-inner">VG</div>
+            <div>
+                <h2 class="font-extrabold text-slate-900 text-2xl tracking-wide">VoiceGuard</h2>
+                <p class="text-xs text-[#0f6d55] font-extrabold uppercase tracking-wider">AAROHAN × PEEK HUB</p>
+            </div>
+        </div>
+
+        <h3 class="text-2xl font-black text-slate-900 text-center mb-2">Operator Sign In</h3>
+        <p class="text-sm text-slate-500 text-center mb-8 font-medium">Access your cyber defense console</p>
+
+        {% if success_msg %}
+            <div class="bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm p-4 rounded-2xl mb-6 font-semibold text-center">
+                Registration successful! Please sign in with your credentials.
+            </div>
+        {% endif %}
+
+        {% if error %}
+            <div class="bg-rose-50 border border-rose-200 text-rose-600 text-sm p-4 rounded-2xl mb-6 font-semibold text-center">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        <form action="/login" method="POST" class="space-y-6">
+            <div>
+                <label class="block text-xs font-extrabold text-slate-500 uppercase mb-2 tracking-wider">Email Address</label>
+                <input type="email" name="email" required placeholder="testing@example.com" class="w-full bg-[#fbfbf9] border border-slate-300 text-slate-800 text-sm rounded-2xl px-5 py-3.5 outline-none focus:border-[#0f6d55] focus:ring-2 focus:ring-[#0f6d55]/20 font-medium transition">
+            </div>
+            <div>
+                <label class="block text-xs font-extrabold text-slate-500 uppercase mb-2 tracking-wider">Password</label>
+                <input type="password" name="password" required placeholder="••••••••" class="w-full bg-[#fbfbf9] border border-slate-300 text-slate-800 text-sm rounded-2xl px-5 py-3.5 outline-none focus:border-[#0f6d55] focus:ring-2 focus:ring-[#0f6d55]/20 font-medium transition">
+            </div>
+            <button type="submit" class="w-full bg-[#0f6d55] hover:bg-[#0b5240] text-white font-extrabold py-4 rounded-2xl transition shadow-md text-sm uppercase tracking-wider">
+                Sign In
+            </button>
+        </form>
+
+        <p class="text-sm text-slate-500 text-center mt-8">
+            Don't have an account? <a href="/register" class="text-[#0f6d55] font-bold underline hover:text-[#0b5240]">Register here</a>
+        </p>
+    </div>
+</body>
+</html>

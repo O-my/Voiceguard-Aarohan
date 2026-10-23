@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoiceGuard — AI Cyber Defense Lab (AAROHAN × PEEK HUB)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#f3f4f0] text-slate-800 min-h-screen flex flex-col font-sans">
+
+    <!-- ENLARGED NAVBAR -->
+    <nav class="bg-[#0c1e1a] text-slate-100 px-10 py-5 shadow-md flex justify-between items-center">
+        <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-[#0f6d55]/40 border border-[#0f6d55]/60 flex items-center justify-center text-[#22c55e] font-black text-2xl shadow-inner">VG</div>
+            <div>
+                <h1 class="font-extrabold text-white text-lg tracking-wide">VoiceGuard</h1>
+                <p class="text-xs text-[#22c55e] font-bold uppercase tracking-wider">AAROHAN × PEEK HUB</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-4">
+            {% if user %}
+                <span class="text-sm text-slate-300 font-semibold">Welcome, <strong class="text-white">{{ user.name }}</strong></span>
+                <a href="/dashboard" class="bg-[#0f6d55] hover:bg-[#0b5240] text-white text-sm font-bold px-5 py-3 rounded-xl transition shadow-sm">Go to Dashboard ↗</a>
+                <a href="/logout" class="bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-bold px-4 py-3 rounded-xl border border-slate-700 transition">Logout</a>
+            {% else %}
+                <a href="/login" class="text-sm text-slate-300 hover:text-white font-bold px-4 py-2 transition">Sign In</a>
+                <a href="/register" class="bg-[#0f6d55] hover:bg-[#0b5240] text-white text-sm font-bold px-6 py-3 rounded-xl transition shadow">Register Free</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <main class="flex-1 max-w-6xl mx-auto px-6 py-12 flex flex-col justify-center items-center text-center">
+        <div class="inline-flex items-center gap-2 bg-[#0f6d55]/10 border border-[#0f6d55]/30 text-[#0f6d55] px-4 py-1.5 rounded-full text-xs font-extrabold uppercase mb-6 shadow-sm">
+            Track 01: Voice Cloning Fraud Detection
+        </div>
+        <h1 class="text-4xl md:text-6xl font-black text-slate-900 tracking-tight max-w-4xl leading-tight mb-6">
+            Protect Banking Workflows From AI-Cloned Voice Threats
+        </h1>
+        <p class="text-slate-600 text-base md:text-lg max-w-2xl mb-10 font-medium leading-relaxed">
+            VoiceGuard provides real-time local speech screening, multi-factor acoustic telemetry, and non-disruptive step-up verification for high-risk payment mandates.
+        </p>
+
+        <div class="flex gap-4 mb-16">
+            {% if user %}
+                <a href="/dashboard" class="bg-[#0f6d55] hover:bg-[#0b5240] text-white font-extrabold px-8 py-4 rounded-xl transition shadow-md text-sm">Launch Operations Dashboard ↗</a>
+            {% else %}
+                <a href="/register" class="bg-[#0f6d55] hover:bg-[#0b5240] text-white font-extrabold px-8 py-4 rounded-xl transition shadow-md text-sm">Create Account</a>
+                <a href="/login" class="bg-white hover:bg-slate-50 text-slate-800 font-bold px-8 py-4 rounded-xl transition border border-slate-200/80 text-sm shadow-sm">Sign In</a>
+            {% endif %}
+        </div>
+
+        <!-- FEATURES GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left w-full">
+            <div class="bg-white border border-slate-200/80 p-8 rounded-3xl shadow-sm hover:shadow-md transition">
+                <div class="text-[#0f6d55] text-3xl mb-4">⚡</div>
+                <h3 class="font-extrabold text-slate-900 text-sm uppercase tracking-wider mb-3">Local Speech Screening</h3>
+                <p class="text-sm text-slate-600 font-medium leading-relaxed">Runs in-browser with zero raw audio saved to persistent databases.</p>
+            </div>
+            <div class="bg-white border border-slate-200/80 p-8 rounded-3xl shadow-sm hover:shadow-md transition">
+                <div class="text-[#0f6d55] text-3xl mb-4">📊</div>
+                <h3 class="font-extrabold text-slate-900 text-sm uppercase tracking-wider mb-3">Acoustic Telemetry</h3>
+                <p class="text-sm text-slate-600 font-medium leading-relaxed">Extracts pitch jitter, F0 prosody, vocoder roll-off, and SNR metrics.</p>
+            </div>
+            <div class="bg-white border border-slate-200/80 p-8 rounded-3xl shadow-sm hover:shadow-md transition">
+                <div class="text-[#0f6d55] text-3xl mb-4">📄</div>
+                <h3 class="font-extrabold text-slate-900 text-sm uppercase tracking-wider mb-3">Audit Dossiers</h3>
+                <p class="text-sm text-slate-600 font-medium leading-relaxed">Generates SHA-256 verified JSON and printable PDF forensic certificates.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

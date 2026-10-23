@@ -1,0 +1,7 @@
+.venv/
+.venv-1/
+venv/
+node_modules/
+__pycache__/
+*.pyc
+uploads/
